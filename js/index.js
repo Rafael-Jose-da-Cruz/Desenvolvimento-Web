@@ -9,3 +9,6 @@ const meusLinks = [
 const menuCriado = navBar("Nome do Site", meusLinks)
 
 document.body.prepend(menuCriado);
+
+const rodapeCriado = footer("Nome");
+document.body.append(rodapeCriado);
