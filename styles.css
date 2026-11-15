@@ -1,1 +1,16 @@
-/* Estilos Globais - incluir em toos os arquivos html */
+/* Estilos globais - usado por todas as páginas */
+
+body {
+    background-color: #f8f9fa;
+}
+
+/* Fotos dos cards e do modal */
+.imagem-embarcacao {
+    height: 200px;
+    object-fit: cover;
+}
+
+.imagem-detalhe {
+    max-height: 320px;
+    object-fit: cover;
+}

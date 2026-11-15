@@ -1,19 +1,14 @@
-export function footer(companyName) {
-    const footerElement = document.createElement("footer");
-    footerElement.classList.add("bg-dark", "text-white", "text-center", "py-4", "mt-auto");
-    footerElement.setAttribute("data-bs-theme", "dark");
+// Componente de rodapé usado em todas as páginas
 
-    const container = document.createElement("div");
-    container.classList.add("container");
+function criarFooter() {
+    const footer = document.createElement("footer");
+    footer.className = "bg-dark text-white text-center py-3";
 
-    const p = document.createElement("p");
-    p.classList.add("mb-0", "small");
-    
-    const anoAtual = new Date().getFullYear();
-    p.textContent = `© ${anoAtual} ${companyName}. Todos os direitos reservados.`;
+    footer.innerHTML = `
+        <div class="container">
+            <p class="small mb-0">© ${new Date().getFullYear()} Titanic Náutica</p>
+        </div>
+    `;
 
-    container.append(p);
-    footerElement.append(container);
-
-    return footerElement;
+    return footer;
 }

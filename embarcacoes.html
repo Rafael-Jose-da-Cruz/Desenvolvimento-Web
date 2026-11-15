@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo de lanchas, iates, veleiros e catamarãs para alugar em Santa Catarina.">
+    <title>Embarcações — Titanic Náutica</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- Cabeçalho montado em components/header.js -->
+    <div id="cabecalho"></div>
+
+    <main class="flex-grow-1">
+        <div class="container py-5">
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                    <h1 class="h3 mb-1">Embarcações</h1>
+                    <p class="text-secondary mb-0">Escolha o barco ideal para o seu passeio.</p>
+                </div>
+                <span id="contador-embarcacoes" class="text-secondary small"></span>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="row g-3 align-items-end">
+                        <div class="col-12 col-lg-5">
+                            <label for="busca-embarcacao" class="form-label">Buscar</label>
+                            <input id="busca-embarcacao" type="search" class="form-control"
+                                placeholder="Nome da embarcação">
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <label for="filtro-tipo" class="form-label">Tipo</label>
+                            <select id="filtro-tipo" class="form-select">
+                                <option value="">Todos os tipos</option>
+                            </select>
+                        </div>
+                        <div class="col-6 col-lg-2">
+                            <label for="filtro-status" class="form-label">Status</label>
+                            <select id="filtro-status" class="form-select">
+                                <option value="">Todos</option>
+                                <option value="disponivel">Disponível</option>
+                                <option value="manutencao">Em manutenção</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-lg-2 d-grid">
+                            <button id="limpar-filtros" type="button" class="btn btn-outline-secondary">
+                                Limpar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="lista-embarcacoes" class="row g-4"></div>
+
+            <div id="embarcacoes-vazio" class="text-center py-5 d-none">
+                <h2 class="h5">Nenhuma embarcação encontrada</h2>
+                <p class="text-secondary mb-0">Tente outro nome ou remova os filtros aplicados.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <div class="modal fade" id="modalDetalhes" tabindex="-1" aria-labelledby="tituloDetalhes" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="tituloDetalhes"></h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body" id="corpoDetalhes"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <a href="locacoes.html" class="btn btn-primary" id="botaoReservar">Reservar agora</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé montado em components/footer.js -->
+    <div id="rodape"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="utils/formatar.js"></script>
+    <script src="utils/dados.js"></script>
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="components/cardEmbarcacao.js"></script>
+    <script src="js/embarcacoes.js"></script>
+</body>
+
+</html>
