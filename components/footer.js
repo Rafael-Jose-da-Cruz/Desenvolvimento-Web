@@ -1,5 +1,3 @@
-// Componente de rodapé usado em todas as páginas
-
 function criarFooter() {
     const footer = document.createElement("footer");
     footer.className = "bg-dark text-white text-center py-3";

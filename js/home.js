@@ -30,7 +30,9 @@ if (disponiveis.length === 0) {
 } else {
     destaques.innerHTML = disponiveis
         .slice(0, 3)
-        .map(criarCardEmbarcacao)
+        .map(function (embarcacao) {
+            return criarCardEmbarcacao(embarcacao);
+        })
         .join("");
 }
 

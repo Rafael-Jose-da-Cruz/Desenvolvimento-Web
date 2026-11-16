@@ -1,5 +1,3 @@
-// Dados do site salvos no localStorage
-
 const CHAVE_DADOS = "titanic:dados";
 
 const DADOS_INICIAIS = {
@@ -132,4 +130,106 @@ function listarClientes() {
 
 function listarLocacoes() {
     return lerDados().locacoes;
+}
+
+function proximoId(lista) {
+    let maiorId = 0;
+
+    lista.forEach(function (item) {
+        if (item.id > maiorId) {
+            maiorId = item.id;
+        }
+    });
+
+    return maiorId + 1;
+}
+
+function salvarCliente(cliente) {
+    const dados = lerDados();
+
+    if (cliente.id) {
+        const indice = dados.clientes.findIndex(function (item) {
+            return item.id === cliente.id;
+        });
+
+        if (indice !== -1) {
+            dados.clientes[indice] = cliente;
+        }
+    } else {
+        cliente.id = proximoId(dados.clientes);
+        dados.clientes.push(cliente);
+    }
+
+    salvarDados(dados);
+    return cliente;
+}
+
+function excluirCliente(id) {
+    const dados = lerDados();
+
+    dados.clientes = dados.clientes.filter(function (cliente) {
+        return cliente.id !== id;
+    });
+
+    salvarDados(dados);
+}
+
+function salvarEmbarcacao(embarcacao) {
+    const dados = lerDados();
+
+    if (embarcacao.id) {
+        const indice = dados.embarcacoes.findIndex(function (item) {
+            return item.id === embarcacao.id;
+        });
+
+        if (indice !== -1) {
+            dados.embarcacoes[indice] = embarcacao;
+        }
+    } else {
+        embarcacao.id = proximoId(dados.embarcacoes);
+        dados.embarcacoes.push(embarcacao);
+    }
+
+    salvarDados(dados);
+    return embarcacao;
+}
+
+function excluirEmbarcacao(id) {
+    const dados = lerDados();
+
+    dados.embarcacoes = dados.embarcacoes.filter(function (embarcacao) {
+        return embarcacao.id !== id;
+    });
+
+    salvarDados(dados);
+}
+
+function salvarLocacao(locacao) {
+    const dados = lerDados();
+
+    if (locacao.id) {
+        const indice = dados.locacoes.findIndex(function (item) {
+            return item.id === locacao.id;
+        });
+
+        if (indice !== -1) {
+            dados.locacoes[indice] = locacao;
+        }
+    } else {
+        locacao.id = proximoId(dados.locacoes);
+        dados.locacoes.push(locacao);
+    }
+
+    salvarDados(dados);
+    return locacao;
+}
+
+function excluirLocacao(id) {
+    const dados = lerDados();
+
+    dados.locacoes = dados.locacoes.filter(function (locacao) {
+        return locacao.id !== id;
+    });
+
+    salvarDados(dados);
 }

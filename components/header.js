@@ -1,5 +1,3 @@
-// Componente de cabeçalho (navbar) usado em todas as páginas
-
 const LINKS_MENU = [
     { chave: "inicio", texto: "Início", arquivo: "index.html" },
     { chave: "embarcacoes", texto: "Embarcações", arquivo: "embarcacoes.html" },
