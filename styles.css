@@ -1,1 +1,13 @@
-/* Estilos Globais - incluir em toos os arquivos html */
+body {
+    background-color: #f8f9fa;
+}
+
+.imagem-embarcacao {
+    height: 200px;
+    object-fit: cover;
+}
+
+.imagem-detalhe {
+    max-height: 320px;
+    object-fit: cover;
+}

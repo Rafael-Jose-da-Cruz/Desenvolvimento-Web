@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo de lanchas, iates, veleiros e catamarãs para alugar em Santa Catarina.">
+    <title>Embarcações — Titanic Náutica</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <div id="cabecalho"></div>
+
+    <main class="flex-grow-1">
+        <div class="container py-5">
+
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2 mb-3">
+                <div>
+                    <h1 class="h3 mb-1">Embarcações</h1>
+                    <p class="text-secondary mb-0">Escolha o barco ideal para o seu passeio.</p>
+                </div>
+                <button type="button" class="btn btn-primary align-self-start" id="nova-embarcacao">
+                    Nova embarcação
+                </button>
+            </div>
+
+            <div id="mensagens" class="mb-3"></div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="row g-3 align-items-end">
+                        <div class="col-12 col-lg-5">
+                            <label for="busca-embarcacao" class="form-label">Buscar</label>
+                            <input id="busca-embarcacao" type="search" class="form-control"
+                                placeholder="Nome da embarcação">
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <label for="filtro-tipo" class="form-label">Tipo</label>
+                            <select id="filtro-tipo" class="form-select">
+                                <option value="">Todos os tipos</option>
+                            </select>
+                        </div>
+                        <div class="col-6 col-lg-2">
+                            <label for="filtro-status" class="form-label">Status</label>
+                            <select id="filtro-status" class="form-select">
+                                <option value="">Todos</option>
+                                <option value="disponivel">Disponível</option>
+                                <option value="manutencao">Em manutenção</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-lg-2 d-grid">
+                            <button id="limpar-filtros" type="button" class="btn btn-outline-secondary">
+                                Limpar
+                            </button>
+                        </div>
+                    </div>
+                    <p class="text-secondary small mb-0 mt-3" id="contador-embarcacoes"></p>
+                </div>
+            </div>
+
+            <div id="lista-embarcacoes" class="row g-4"></div>
+
+            <div id="embarcacoes-vazio" class="text-center py-5 d-none">
+                <h2 class="h5">Nenhuma embarcação encontrada</h2>
+                <p class="text-secondary mb-0">Cadastre uma embarcação ou ajuste a busca.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <div class="modal fade" id="modalDetalhes" tabindex="-1" aria-labelledby="tituloDetalhes" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="tituloDetalhes"></h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body" id="corpoDetalhes"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <a href="locacoes.html" class="btn btn-primary" id="botaoReservar">Reservar agora</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalEmbarcacao" tabindex="-1" aria-labelledby="titulo-modal-embarcacao"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <form id="form-embarcacao" class="needs-validation" novalidate>
+                    <div class="modal-header">
+                        <h2 class="modal-title fs-5" id="titulo-modal-embarcacao">Nova embarcação</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="erro-embarcacao" class="mb-3"></div>
+                        <input type="hidden" id="embarcacao-id">
+
+                        <div class="mb-3">
+                            <label for="embarcacao-nome" class="form-label">Nome</label>
+                            <input id="embarcacao-nome" type="text" class="form-control" required minlength="3"
+                                maxlength="80">
+                            <div class="invalid-feedback">Informe o nome da embarcação.</div>
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-12 col-sm-6">
+                                <label for="embarcacao-tipo" class="form-label">Tipo</label>
+                                <select id="embarcacao-tipo" class="form-select" required>
+                                    <option value="">Selecione</option>
+                                    <option value="Lancha">Lancha</option>
+                                    <option value="Iate">Iate</option>
+                                    <option value="Veleiro">Veleiro</option>
+                                    <option value="Catamarã">Catamarã</option>
+                                </select>
+                                <div class="invalid-feedback">Selecione o tipo.</div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <label for="embarcacao-capacidade" class="form-label">Capacidade</label>
+                                <input id="embarcacao-capacidade" type="number" class="form-control" required min="1"
+                                    max="200">
+                                <div class="invalid-feedback">Informe a capacidade em pessoas.</div>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-12 col-sm-6">
+                                <label for="embarcacao-preco" class="form-label">Diária (R$)</label>
+                                <input id="embarcacao-preco" type="number" class="form-control" required min="1"
+                                    step="0.01">
+                                <div class="invalid-feedback">Informe o valor da diária.</div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <label for="embarcacao-status" class="form-label">Status</label>
+                                <select id="embarcacao-status" class="form-select" required>
+                                    <option value="disponivel">Disponível</option>
+                                    <option value="manutencao">Em manutenção</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="embarcacao-imagem" class="form-label">Imagem (link)</label>
+                            <input id="embarcacao-imagem" type="url" class="form-control"
+                                placeholder="https://exemplo.com/foto.jpg">
+                            <div class="form-text">Opcional. Sem o link usamos uma imagem padrão.</div>
+                            <div class="invalid-feedback">Informe um link válido.</div>
+                        </div>
+
+                        <div>
+                            <label for="embarcacao-descricao" class="form-label">Descrição</label>
+                            <textarea id="embarcacao-descricao" class="form-control" rows="3"
+                                maxlength="240"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                            Cancelar
+                        </button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="rodape"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="utils/formatar.js"></script>
+    <script src="utils/dados.js"></script>
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="components/cardEmbarcacao.js"></script>
+    <script src="components/alerta.js"></script>
+    <script src="components/modalConfirmacao.js"></script>
+    <script src="js/embarcacoes.js"></script>
+</body>
+
+</html>
