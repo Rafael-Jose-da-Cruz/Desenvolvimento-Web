@@ -13,7 +13,7 @@ Plataforma web desenvolvida para uma empresa especializada na venda de embarcaç
 
 ### 🌐 Frontend
 
-- ⚙️ JavaScripit
+- ⚙️ JavaScript
 - 🎨 CSS
 - 🛠️ HTML
 - 🟪 Bootstrap
