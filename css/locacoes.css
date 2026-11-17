@@ -17,6 +17,42 @@ body{
     background-color: var(--cor-fundo);
 }
 
+.modo-escuro{
+    --cor-fundo: #121212;
+    --cor-texto: #f8f9fa;
+    --cor-primaria: #529ecc;
+    --cor-btn-1: #396fe2;
+    --cor-btn-3: #2b3035;
+}
+
+.modo-escuro .card {
+    background-color: #1e1e1e;
+    color: #f8f9fa;
+    border-color: #333;
+}   
+
+.modo-escuro .form-control, .modo-escuro .form-select {
+    background-color: #1e1e1e;
+    color: #f8f9fa;
+    border-color: #333;
+}
+
+.modo-escuro .form-control, .modo-escuro .form-select {
+    background-color: #1e1e1e;
+    color: #f8f9fa;
+    border-color: #333;
+}
+
+.modo-escuro .form-control::placeholder, .modo-escuro .h3, .modo-escuro .h4{
+    color: #f8f9fa;
+}
+
+.modo-escuro table, .modo-escuro th, .modo-escuro td {
+    background-color: #1e1e1e;
+    color: #f8f9fa;
+    border-color: #333;
+}
+
 .btn-primary{
     background-color: var(--cor-btn-1);
     border-radius: var(--arredondamento);
@@ -35,6 +71,10 @@ body{
 .btn-outline-danger{
     background-color: rgb(211, 45, 45);
     color: rgb(243, 223, 223);
+}
+
+.btn-dark{
+    border-color: #afaeae;
 }
 
 
