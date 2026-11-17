@@ -3,11 +3,11 @@ function criarCardEmbarcacao(embarcacao, comAcoes) {
 
     const acoes = comAcoes ? `
         <div class="d-flex gap-2 mt-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary flex-fill"
+            <button type="button" class="btn btn-sm btn-secondary flex-fill"
                 data-acao="editar" data-id="${embarcacao.id}">
                 Editar
             </button>
-            <button type="button" class="btn btn-sm btn-outline-danger flex-fill"
+            <button type="button" class="btn btn-sm btn-danger flex-fill"
                 data-acao="excluir" data-id="${embarcacao.id}">
                 Excluir
             </button>
