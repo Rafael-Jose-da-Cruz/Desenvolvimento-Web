@@ -20,7 +20,7 @@
             <h1 class="h3 mb-2">Contato</h1>
             <p class="text-secondary mb-3">Tire dúvidas sobre embarcações, roteiros e valores.</p>
 
-            <div class="col-6 col-lg-2 my-3">
+        <div class="col-6 col-lg-2 my-3">
                 <label for="filtro-status" class="form-label">Perguntas frequentes</label>
                     <select id="filtro-status" class="form-select">
                         <option value="">Todos</option>
@@ -30,24 +30,49 @@
                     </select>
             </div>
 
-            <div class="w-50 col-md-4 col-xl-2 my-3">
-                    <div class="card h-100">
+            <div id="lista-duvidas" class="row g-3 my-3">
+                <div class="col-md-6 card-duvida" data-categoria="Embarcações">
+                    <div class="card h-100 shadow-sm">
                         <div class="card-body">
-                            <p class="fs-5 fw-bold mb-1" id="kpi-disponiveis">Mais dúvidas?</p>
-                            <p class="text-secondary small mb-0">Entre em contato por nossos canais de comunicação:</p>
-                            <ul class="d-flex gap-1 flex-column">
-                                <li>Telefone: (41) 9999-0011</li>
-                                <li>E-mail: titaniclocadora@gmail.com</li>
-                                <li>Instagram: @titaniclocadora </li>
-                            </ul>
+                            <h5 class="card-title h6 fw-bold">Precisa de habilitação para pilotar?</h5>
+                            <p class="card-text text-secondary small mb-0">Para conduzir nossas embarcações por conta própria, é obrigatório possuir habilitação de Arrais-Amador. Caso contrário, oferecemos a opção de locação com marinheiro experiente incluso.</p>
                         </div>
                     </div>
                 </div>
 
+                <div class="col-md-6 card-duvida" data-categoria="Roteiros">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title h6 fw-bold">Como funcionam os roteiros de passeio?</h5>
+                            <p class="card-text text-secondary small mb-0">Os roteiros podem ser pré-definidos para ilhas e praias da região ou totalmente personalizados de acordo com a preferência do seu grupo e o tempo de locação contratado.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 card-duvida" data-categoria="Valores">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title h6 fw-bold">Quais são as formas de pagamento aceitas?</h5>
+                            <p class="card-text text-secondary small mb-0">Aceitamos pagamento via Pix, cartões de crédito (com opção de parcelamento sob consulta) e transferência bancária para confirmação da reserva.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card my-3 bg-light border-0 col-md-6">
+                <div class="card-body">
+                    <p class="fs-6 fw-bold mb-1">Ainda tem dúvidas? Fale conosco:</p>
+                    <ul class="d-flex gap-2 flex-column small mb-0 text-secondary">
+                        <li>Telefone: (41) 9999-0011</li>
+                        <li>E-mail: titaniclocadora@gmail.com</li>
+                        <li>Instagram: @titaniclocadora</li>
+                    </ul>
+                </div>
+            </div>
+
             <a href="embarcacoes.html" class="btn btn-primary">Ver embarcações</a>
             <a href="index.html" class="btn btn-outline-secondary">Voltar ao início</a>
         </div>
-        
     </main>
 
     <div id="rodape"></div>
@@ -57,6 +82,7 @@
         crossorigin="anonymous"></script>
     <script src="components/header.js"></script>
     <script src="components/footer.js"></script>
+    <script src="components/cardContato.js"></script>
     <script src="js/contato.js"></script>
 </body>
 
