@@ -1,0 +1,33 @@
+:root{
+    --cor-primaria: #3d81b9;
+    --cor-secundaria: rgb(119, 105, 105);
+    --cor-destaque: rgb(18, 40, 163);
+    --cor-fundo: #f7f7f7;
+    --max-height: 120px;
+    --cor-texto: black;
+    --cor-texto-destaque: rgb(9, 9, 218);
+    --arredondamento: 8px;
+    --cor-btn-1: rgb(10, 132, 202);
+    --cor-btn-2: rgb(145, 136, 136);
+    --cor-btn-3: rgb(199, 199, 199);
+
+}
+
+body{
+    background-color: var(--cor-fundo);
+}
+
+.btn-primary{
+    background-color: var(--cor-btn-1);
+    border-radius: var(--arredondamento);
+}
+
+.btn-outline-secondary{
+    background-color: var(--cor-fundo);
+    margin: auto 1px;
+}
+
+.btn-outline-secondary{
+    background-color: var(--cor-btn-3);
+    color: var(--cor-texto);
+}
