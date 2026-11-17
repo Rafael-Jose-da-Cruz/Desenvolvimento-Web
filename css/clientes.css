@@ -80,3 +80,31 @@ body{
 .btn-dark{
     border-color: #afaeae;
 }
+
+.modo-escuro .modal-content {
+    background-color: #1e1e1e;
+    color: #f8f9fa;
+    border-color: #333;
+}
+
+.modo-escuro .modal-header, .modo-escuro .modal-footer {
+    border-color: #333;
+}
+
+.modo-escuro .modal-body, .modo-escuro .modal-body p, .modo-escuro .modal-body span, .modo-escuro .modal-body strong, .modo-escuro .modal-body li {
+    color: #f8f9fa;
+}
+
+.modo-escuro .modal-body .text-secondary, .modo-escuro .modal-body .form-text {
+    color: #adb5bd;
+}
+
+.modo-escuro .modal-body .form-control, .modo-escuro .modal-body .form-select {
+    background-color: #2b3035;
+    color: #f8f9fa;
+    border-color: #495057;
+}
+
+.modo-escuro .modal-body .form-control::placeholder {
+    color: #6c757d;
+}
