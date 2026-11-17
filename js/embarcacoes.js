@@ -8,6 +8,9 @@ const filtroTipo = document.getElementById("filtro-tipo");
 const filtroStatus = document.getElementById("filtro-status");
 const botaoLimpar = document.getElementById("limpar-filtros");
 const botaoNova = document.getElementById("nova-embarcacao");
+const botaoExportar = document.getElementById("exportar-embarcacoes");
+const botaoImportar = document.getElementById("importar-embarcacoes");
+const campoArquivo = document.getElementById("arquivo-embarcacoes");
 const contador = document.getElementById("contador-embarcacoes");
 const lista = document.getElementById("lista-embarcacoes");
 const vazio = document.getElementById("embarcacoes-vazio");
@@ -151,6 +154,38 @@ function excluir(embarcacao) {
 
 botaoNova.addEventListener("click", function () {
     abrirFormulario(null);
+});
+
+botaoExportar.addEventListener("click", function () {
+    exportarEmbarcacoesCsv();
+    mostrarAlerta(mensagens, "Arquivo CSV gerado com sucesso.", "success");
+});
+
+botaoImportar.addEventListener("click", function () {
+    campoArquivo.click();
+});
+
+campoArquivo.addEventListener("change", function () {
+    const arquivo = campoArquivo.files[0];
+
+    if (!arquivo) {
+        return;
+    }
+
+    importarEmbarcacoesCsv(arquivo).then(function (importadas) {
+        embarcacoes = listarEmbarcacoes();
+        carregarTipos();
+        mostrarEmbarcacoes();
+        mostrarAlerta(
+            mensagens,
+            importadas + (importadas === 1 ? " embarcação importada do CSV." : " embarcações importadas do CSV."),
+            importadas > 0 ? "success" : "warning"
+        );
+    }).catch(function () {
+        mostrarAlerta(mensagens, "Não foi possível ler o arquivo selecionado.", "danger");
+    }).finally(function () {
+        campoArquivo.value = "";
+    });
 });
 
 busca.addEventListener("input", mostrarEmbarcacoes);

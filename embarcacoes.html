@@ -23,10 +23,20 @@
                     <h1 class="h3 mb-1">Embarcações</h1>
                     <p class="text-secondary mb-0">Escolha o barco ideal para o seu passeio.</p>
                 </div>
-                <button type="button" class="btn btn-primary align-self-start" id="nova-embarcacao">
-                    Nova embarcação
-                </button>
+                <div class="d-flex flex-column flex-sm-row gap-2 align-self-start">
+                    <button type="button" class="btn btn-outline-secondary" id="exportar-embarcacoes">
+                        Exportar CSV
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary" id="importar-embarcacoes">
+                        Importar CSV
+                    </button>
+                    <button type="button" class="btn btn-primary" id="nova-embarcacao">
+                        Nova embarcação
+                    </button>
+                </div>
             </div>
+
+            <input type="file" id="arquivo-embarcacoes" accept=".csv,text/csv" class="d-none">
 
             <div id="mensagens" class="mb-3"></div>
 
@@ -176,6 +186,7 @@
         crossorigin="anonymous"></script>
     <script src="utils/formatar.js"></script>
     <script src="utils/dados.js"></script>
+    <script src="utils/csvEmbarcacoes.js"></script>
     <script src="components/header.js"></script>
     <script src="components/footer.js"></script>
     <script src="components/cardEmbarcacao.js"></script>
