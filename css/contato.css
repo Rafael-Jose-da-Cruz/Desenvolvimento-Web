@@ -10,7 +10,6 @@
     --cor-btn-1: rgb(10, 132, 202);
     --cor-btn-2: rgb(145, 136, 136);
     --cor-btn-3: rgb(199, 199, 199);
-
 }
 
 body{
@@ -23,21 +22,19 @@ body{
 }
 
 .btn-outline-secondary{
-    background-color: var(--cor-fundo);
+    background-color: var(--cor-btn-3);
+    color: var(--cor-texto);
     margin: auto 1px;
 }
 
-.btn-outline-secondary{
-    background-color: var(--cor-btn-3);
-    color: var(--cor-texto);
+#lista-duvidas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
 }
 
-.btn-outline-danger{
-    background-color: rgb(211, 45, 45);
-    color: rgb(243, 223, 223);
+#lista-duvidas > div {
+    flex: 0 0 calc(50% - 0.5rem);
+    max-width: calc(50% - 0.5rem);
 }
-
-
-
-
-
