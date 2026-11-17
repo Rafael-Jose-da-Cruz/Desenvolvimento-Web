@@ -32,11 +32,6 @@ body{
     color: var(--cor-texto);
 }
 
-.btn-outline-danger{
-    background-color: rgb(211, 45, 45);
-    color: rgb(243, 223, 223);
-}
-
 
 
 
