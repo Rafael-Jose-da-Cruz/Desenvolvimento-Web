@@ -23,7 +23,9 @@ Plataforma web desenvolvida para uma empresa especializada na venda de embarcaç
 - Catálogo de Embarcações
 - Detalhes Técnicos
 - Formulário de Contato
+- Importação e Exportação de Embarcações em CSV
 - Design Responsivo
+- Validação de Formulários
 
 ## 👤 Alunos
 
