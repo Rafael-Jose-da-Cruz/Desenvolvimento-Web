@@ -101,81 +101,79 @@
     <div class="modal fade" id="modalEmbarcacao" tabindex="-1" aria-labelledby="titulo-modal-embarcacao"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <form id="form-embarcacao" class="needs-validation" novalidate>
-                    <div class="modal-header">
-                        <h2 class="modal-title fs-5" id="titulo-modal-embarcacao">Nova embarcação</h2>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            <form id="form-embarcacao" class="modal-content needs-validation" novalidate>
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="titulo-modal-embarcacao">Nova embarcação</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="erro-embarcacao" class="mb-3"></div>
+                    <input type="hidden" id="embarcacao-id">
+
+                    <div class="mb-3">
+                        <label for="embarcacao-nome" class="form-label">Nome</label>
+                        <input id="embarcacao-nome" type="text" class="form-control" required minlength="3"
+                            maxlength="80">
+                        <div class="invalid-feedback">Informe o nome da embarcação.</div>
                     </div>
-                    <div class="modal-body">
-                        <div id="erro-embarcacao" class="mb-3"></div>
-                        <input type="hidden" id="embarcacao-id">
 
-                        <div class="mb-3">
-                            <label for="embarcacao-nome" class="form-label">Nome</label>
-                            <input id="embarcacao-nome" type="text" class="form-control" required minlength="3"
-                                maxlength="80">
-                            <div class="invalid-feedback">Informe o nome da embarcação.</div>
+                    <div class="row g-3 mb-3">
+                        <div class="col-12 col-sm-6">
+                            <label for="embarcacao-tipo" class="form-label">Tipo</label>
+                            <select id="embarcacao-tipo" class="form-select" required>
+                                <option value="">Selecione</option>
+                                <option value="Lancha">Lancha</option>
+                                <option value="Iate">Iate</option>
+                                <option value="Veleiro">Veleiro</option>
+                                <option value="Catamarã">Catamarã</option>
+                            </select>
+                            <div class="invalid-feedback">Selecione o tipo.</div>
                         </div>
-
-                        <div class="row g-3 mb-3">
-                            <div class="col-12 col-sm-6">
-                                <label for="embarcacao-tipo" class="form-label">Tipo</label>
-                                <select id="embarcacao-tipo" class="form-select" required>
-                                    <option value="">Selecione</option>
-                                    <option value="Lancha">Lancha</option>
-                                    <option value="Iate">Iate</option>
-                                    <option value="Veleiro">Veleiro</option>
-                                    <option value="Catamarã">Catamarã</option>
-                                </select>
-                                <div class="invalid-feedback">Selecione o tipo.</div>
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <label for="embarcacao-capacidade" class="form-label">Capacidade</label>
-                                <input id="embarcacao-capacidade" type="number" class="form-control" required min="1"
-                                    max="200">
-                                <div class="invalid-feedback">Informe a capacidade em pessoas.</div>
-                            </div>
-                        </div>
-
-                        <div class="row g-3 mb-3">
-                            <div class="col-12 col-sm-6">
-                                <label for="embarcacao-preco" class="form-label">Diária (R$)</label>
-                                <input id="embarcacao-preco" type="number" class="form-control" required min="1"
-                                    step="0.01">
-                                <div class="invalid-feedback">Informe o valor da diária.</div>
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <label for="embarcacao-status" class="form-label">Status</label>
-                                <select id="embarcacao-status" class="form-select" required>
-                                    <option value="disponivel">Disponível</option>
-                                    <option value="manutencao">Em manutenção</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="embarcacao-imagem" class="form-label">Imagem (link)</label>
-                            <input id="embarcacao-imagem" type="url" class="form-control"
-                                placeholder="https://exemplo.com/foto.jpg">
-                            <div class="form-text">Opcional. Sem o link usamos uma imagem padrão.</div>
-                            <div class="invalid-feedback">Informe um link válido.</div>
-                        </div>
-
-                        <div>
-                            <label for="embarcacao-descricao" class="form-label">Descrição</label>
-                            <textarea id="embarcacao-descricao" class="form-control" rows="3"
-                                maxlength="240"></textarea>
+                        <div class="col-12 col-sm-6">
+                            <label for="embarcacao-capacidade" class="form-label">Capacidade</label>
+                            <input id="embarcacao-capacidade" type="number" class="form-control" required min="1"
+                                max="200">
+                            <div class="invalid-feedback">Informe a capacidade em pessoas.</div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-                            Cancelar
-                        </button>
-                        <button type="submit" class="btn btn-primary">Salvar</button>
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-12 col-sm-6">
+                            <label for="embarcacao-preco" class="form-label">Diária (R$)</label>
+                            <input id="embarcacao-preco" type="number" class="form-control" required min="1"
+                                step="0.01">
+                            <div class="invalid-feedback">Informe o valor da diária.</div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <label for="embarcacao-status" class="form-label">Status</label>
+                            <select id="embarcacao-status" class="form-select" required>
+                                <option value="disponivel">Disponível</option>
+                                <option value="manutencao">Em manutenção</option>
+                            </select>
+                        </div>
                     </div>
-                </form>
-            </div>
+
+                    <div class="mb-3">
+                        <label for="embarcacao-imagem" class="form-label">Imagem (link)</label>
+                        <input id="embarcacao-imagem" type="url" class="form-control"
+                            placeholder="https://exemplo.com/foto.jpg">
+                        <div class="form-text">Opcional. Sem o link usamos uma imagem padrão.</div>
+                        <div class="invalid-feedback">Informe um link válido.</div>
+                    </div>
+
+                    <div>
+                        <label for="embarcacao-descricao" class="form-label">Descrição</label>
+                        <textarea id="embarcacao-descricao" class="form-control" rows="3"
+                            maxlength="240"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </div>
+            </form>
         </div>
     </div>
 
