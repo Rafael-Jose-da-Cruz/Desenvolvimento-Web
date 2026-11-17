@@ -5,6 +5,10 @@
 
 # Trabalho: Desenvolvimento-Web
 
+## 🐀 Executar
+
+- Click no link: https://rafael-jose-da-cruz.github.io/Desenvolvimento-Web/
+
 ## 📖 Descrição
 
 Plataforma web desenvolvida para uma empresa especializada na venda de embarcações, focada na exibição de catálogo, especificações técnicas e contato comercial.
@@ -29,6 +33,7 @@ Plataforma web desenvolvida para uma empresa especializada na venda de embarcaç
 
 ## 👤 Alunos
 
-- Davi Augusto Gonçalves
-- Dionclei de Souza Pereira
-- Rafael Jose da Cruz
+- Davi Augusto Gonçalves (estilização, pagina de contato e Modo escuro)
+- Dionclei de Souza Pereira (estruturação de arquivos base, Dashbord, Campos de busca e CSV)
+- Rafael Jose da Cruz (Navbar, footer e README.md)
+
