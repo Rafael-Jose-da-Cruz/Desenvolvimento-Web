@@ -4,7 +4,7 @@ function criarModalConfirmacao() {
     elemento.tabIndex = -1;
 
     elemento.innerHTML = `
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
                     <h2 class="modal-title fs-5">Confirmar exclusão</h2>
